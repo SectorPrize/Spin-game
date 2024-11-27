@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-row: auto auto;
+  grid-column: auto auto auto;
+}
+
+.background {
+  position: relative;
+  height: 100vh;
+  grid-column: 2;
+  grid-row: 1/2;
+}
+
+.gif {
+  grid-column: 2;
+}
+
+.spiner {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.inscription {
+  position: fixed;
+  top: 1vh;
+  padding-left: 25vh;
+  width: 30vh;
+  height: auto;
+}
+
+.wheel {
+  position: fixed;
+  top: 43vh;
+  margin-left: 1px;
+  width: 56vh;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+  animation: swing 2s ease-in-out infinite;
+}
+
+.wheel_center {
+  position: fixed;
+  top: 42.5vh;
+  margin-left: 9vh;
+  width: 38vh;
+  z-index: 2;
+}
+
+.button {
+  position: fixed;
+  top: 68vh;
+  margin-left: 14vh;
+  width: 28vh;
+  z-index: 2;
+  animation: pulse 1.5s infinite ease-in-out;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.count {
+  position: fixed;
+  top: 52vh;
+  margin-left: 27.5vh;
+  font-size: 3vh;
+  color: white;
+  z-index: 2;
+}
+
+.repeat {
+  position: fixed;
+  top: 77vh;
+  margin-left: 17vh;
+  width: 22vh;
+  z-index: 3;
+  opacity: 0;
+}
+
+.splen {
+  position: fixed;
+  top: 77vh;
+  margin-left: 17vh;
+  width: 22vh;
+  z-index: 3;
+  opacity: 0;
+}
+
+.arrow {
+  position: fixed;
+  top: 65vh;
+  margin-left: 17vh;
+  width: 22vh;
+  z-index: 0;
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-one {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  }
+  50% {
+    transform: rotate(1000deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  100% {
+    transform: rotate(2486deg);
+  }
+}
+
+@keyframes spin-two {
+  0% {
+    transform: rotate(2486deg);
+    animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  }
+  50% {
+    transform: rotate(3486deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  100% {
+    transform: rotate(5066deg);
+  }
+}
